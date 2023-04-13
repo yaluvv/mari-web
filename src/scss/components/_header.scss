@@ -1,0 +1,112 @@
+.header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    line-height: 29px;
+
+    &__container {
+        padding-top: 53px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        display: block;
+        font-weight: 600;
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+
+        @media (max-width: 850px) {
+            & {
+                display: none;
+            }
+        }
+    }
+    &__list {
+        display: flex;
+        column-gap: 24px;
+    }
+    &__list-link {
+        transition: all 0.3s ease;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include hover() {
+            color: $brand-color;
+        }
+        &:active {
+            color: $active-color;
+        }
+        &.focus-visible {
+            outline: 1px solid $active-color;
+        }
+
+        @media (max-width: 850px) {
+            color: #fff;
+        }
+    }
+
+    &__list-link {
+        font-weight: 400;
+    }
+    &__btn {
+        background: $brand-color;
+        border-radius: 4px;
+        border: none;
+        padding: 5px 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 29px;
+        color: rgba(62, 34, 3, 0.82);
+
+        &:focus {
+            outline: none;
+        }
+
+        @include hover() {
+            opacity: 0.6;
+        }
+        &:active {
+            background-color: $active-color;
+        }
+        &.focus-visible {
+            outline: 1px solid $active-color;
+        }
+    }
+
+    &.header--open {
+        .header__right {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100vh;
+            background-color: rgb(9, 9, 9);
+            z-index: 1;
+        }
+        .header__list {
+            flex-direction: column;
+            gap: 50px;
+            margin: auto auto 50px auto;
+        }
+        .header__logo {
+            z-index: 10;
+            color: #fff;
+        }
+        .header__btn {
+            margin-bottom: auto;
+        }
+        .header__list-link {
+            font-size: 40px;
+        }
+    }
+}

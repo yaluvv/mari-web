@@ -1,0 +1,102 @@
+.volunteer {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 24.31%, rgba(0, 0, 0, 0) 73.48%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 84.53%, #000000 100%), url("../../img/second-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 55%;
+    color: #ffffff;
+    padding-bottom: 222px;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 400px;
+
+        @media (max-width: 950px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__top-info {
+        flex-basis: 639px;
+    }
+    &__top-title {
+        margin-bottom: 50px;
+    }
+    &__top-text {
+        &:not(:last-child) {
+            margin-bottom: 34px;
+        }
+        @media (max-width: 950px) {
+            font-size: 16px;
+            line-height: 28px;
+        }
+        @media (max-width: 560px) {
+            font-size: 14px;
+            line-height: 26px;
+        }
+    }
+    &__top-btn {
+        margin-top: 42px;
+    }
+    &__top-img {
+        object-fit: cover;
+
+        @media (max-width: 950px) {
+            width: 300px;
+            height: 550px;
+            order: -1;
+        }
+    }
+    &__quotes {
+        margin-top: 120px;
+    }
+    &__user-quote {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+    &__bottom-title {
+        max-width: 965px;
+        margin-bottom: 31px;
+    }
+    &__bottom-text {
+        max-width: 639px;
+        &:not(:last-child) {
+            margin-bottom: 29px;
+        }
+        @media (max-width: 950px) {
+            font-size: 16px;
+            line-height: 28px;
+        }
+        @media (max-width: 560px) {
+            font-size: 14px;
+            line-height: 26px;
+        }
+    }
+    &__bottom-buttons {
+        margin-top: 42px;
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+    }
+    &__btn-more {
+        border: 2px solid rgba(253, 180, 97, 0.82);
+        border-radius: 8px;
+        color: rgba(253, 180, 97, 0.82);
+        background: transparent;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include hover() {
+            opacity: 0.6;
+        }
+        &:active {
+            background-color: $active-color;
+        }
+        &.focus-visible {
+            outline: 2px solid red;
+        }
+    }
+}

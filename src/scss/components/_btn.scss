@@ -1,0 +1,64 @@
+.btn {
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    &--action {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 10px;
+        text-transform: uppercase;
+        color: rgba(253, 180, 97, 0.82);
+        background: transparent;
+        border-bottom: 2px solid rgba(253, 180, 97, 0.82);
+        transition: all 0.4s ease;
+
+        svg {
+            fill: rgba(253, 180, 97, 0.82);
+        }
+        &:focus {
+            outline: none;
+        }
+        @include hover() {
+            color: rgba(253, 180, 97, 0.5);
+            border-bottom-color: rgba(253, 180, 97, 0.5);
+
+            svg {
+                transition: all 0.4s ease;
+                fill: rgba(253, 180, 97, 0.5);
+            }
+        }
+        &:active {
+            color: $active-color;
+            border-bottom-color: $active-color;
+
+            svg {
+                fill: $active-color;
+            }
+        }
+        &.focus-visible {
+            outline: 2px solid red;
+        }
+    }
+    &--donate {
+        background: rgba(253, 180, 97, 0.82);
+        color: rgba(62, 34, 3, 0.82);
+        border-radius: 4px;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include hover() {
+            opacity: 0.6;
+        }
+        &:active {
+            background-color: $active-color;
+        }
+        &.focus-visible {
+            outline: 2px solid red;
+        }
+    }
+}

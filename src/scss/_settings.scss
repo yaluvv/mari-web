@@ -1,0 +1,155 @@
+@import "./libs/normalize";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  line-height: 32px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+.content,
+.keeping-finding__top,
+.keeping-finding__bottom-image,
+.keeping-finding__user-quote,
+.volunteer__top-img,
+.volunteer__top-info,
+.volunteer__quotes,
+.volunteer__top-img,
+.volunteer__bottom {
+  will-change: transform;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1310px;
+  padding: 0 10px;
+}
+
+.content-group {
+  display: flex;
+}
+
+.title {
+  &--big {
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 86px;
+
+    @media (max-width: 850px) {
+      font-size: 58px;
+      line-height: 70px;
+    }
+    @media (max-width: 560px) {
+      font-size: 42px;
+      line-height: 56px;
+    }
+  }
+  &--medium {
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 77px;
+
+    @media (max-width: 950px) {
+      font-size: 56px;
+    }
+    @media (max-width: 560px) {
+      font-size: 36px;
+      line-height: 45px;
+    }
+  }
+}
+.user-quote {
+  display: flex;
+  column-gap: 24px;
+
+  &__info-text {
+    q {
+      display: inline-block;
+      max-width: 520px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 27px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    span {
+      font-weight: 400;
+
+      line-height: 27px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 16px;
+      display: block;
+    }
+  }
+}
+.menu-btn {
+  display: none;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+
+  &.menu-btn--open {
+    span:not(:last-child) {
+      margin-bottom: 0;
+    }
+    span:nth-child(1) {
+      transform: translateY(2px) rotate(55deg);
+      transition: all 0.3s ease;
+    }
+    span:nth-child(2) {
+      transform: rotate(126deg);
+      transition: all 0.3s ease;
+    }
+    span:last-child {
+      display: none;
+    }
+  }
+  span {
+    display: block;
+    transition: all 0.3s ease;
+    height: 2px;
+    width: 80%;
+    background-color: #fff;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+  @media (max-width: 850px) {
+    & {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+  }
+}
